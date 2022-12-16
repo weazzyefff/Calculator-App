@@ -82,24 +82,7 @@ clear.addEventListener("click", (e) => {
 });
 const addSign = document.getElementById("+");
 addSign.addEventListener("click", (e) => {
-  add();
+  
 });
-const subtractSign = document.getElementById("-");
-subtractSign.addEventListener("click", (e) => {
-  subtract();
-});
-const multiplySign = document.getElementById("*");
-addSign.addEventListener("click", (e) => {
-  multiply();
-});
-const divideSign = document.getElementById("/");
-addSign.addEventListener("click", (e) => {
-  divide();
-});
-const equals = document.getElementById("=");
-equals.addEventListener("click", (e) => {
-  operate();
-});
-
 
 //console.log(operate('+',10, 5)); <<working
