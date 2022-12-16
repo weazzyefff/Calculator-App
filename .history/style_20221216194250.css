@@ -1,0 +1,11 @@
+.container {
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.display {
+    border: 2px black;
+}
+.numbtn {
+    background-color: lightblue;
+}
