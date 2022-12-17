@@ -1,6 +1,6 @@
 //Global variables
 let displayValue = [];
-let operator = '';
+let operator = [];
 
 // Main functions
 const add = (...args) => args.reduce((a, b) => a + b);
@@ -59,48 +59,48 @@ five.addEventListener("click", (e) => {
 const six = document.getElementById("6");
 six.addEventListener("click", (e) => {
     document.querySelector(".display").innerHTML = 6;
-    displayValue.push(6);
+    return displayValue.push(6);
 });
 const seven = document.getElementById("7");
 seven.addEventListener("click", (e) => {
     document.querySelector(".display").innerHTML = 7;
-    displayValue.push(7);
+    return displayValue.push(7);
 });
 const eight = document.getElementById("8");
 eight.addEventListener("click", (e) => {
     document.querySelector(".display").innerHTML = 8;
-    displayValue.push(8);
+    return displayValue.push(8);
 });
 const nine = document.getElementById("9");
 nine.addEventListener("click", (e) => {
     document.querySelector(".display").innerHTML = 9;
-    displayValue.push(9);
+    return displayValue.push(9);
 });
 const clear = document.getElementById("clear");
 clear.addEventListener("click", (e) => {
     document.querySelector(".display").innerHTML = 0;
-    return displayValue = [];
+    return displayValue = 0;
 });
 const addSign = document.getElementById("+");
 addSign.addEventListener("click", (e) => {
-    return operator = '+';
+    return operator.push('+');
 
 });
 const subtractSign = document.getElementById("-");
 subtractSign.addEventListener("click", (e) => {
-    return operator = '-';
+    return operator.push('-');
 });
 const multiplySign = document.getElementById("*");
 multiplySign.addEventListener("click", (e) => {
-    return operator = '*';
+    return operator.push('*');
 });
 const divideSign = document.getElementById("divide");
 divideSign.addEventListener("click", (e) => {
-    return operator = '/';
+    return operator.push('/');
 });
 const equals = document.getElementById("=");
 equals.addEventListener("click", (e) => {
-  return document.querySelector(".display").innerHTML = operate(operator, ...displayValue);
+  return document.querySelector(".display").innerHTML = operate(operator,displayValue, displayValue);
 });
 
 

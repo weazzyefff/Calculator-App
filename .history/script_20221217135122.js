@@ -79,7 +79,7 @@ nine.addEventListener("click", (e) => {
 const clear = document.getElementById("clear");
 clear.addEventListener("click", (e) => {
     document.querySelector(".display").innerHTML = 0;
-    return displayValue = [];
+    return displayValue = 0;
 });
 const addSign = document.getElementById("+");
 addSign.addEventListener("click", (e) => {
@@ -100,7 +100,7 @@ divideSign.addEventListener("click", (e) => {
 });
 const equals = document.getElementById("=");
 equals.addEventListener("click", (e) => {
-  return document.querySelector(".display").innerHTML = operate(operator, ...displayValue);
+  return document.querySelector(".display").innerHTML = operate(operator,displayValue, displayValue);
 });
 
 
