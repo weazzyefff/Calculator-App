@@ -1,16 +1,8 @@
 //Global variables
 let actualValue = [];
 let pendingVal = "";
-const operator = [];
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operations]')
-const equalsButton = document.querySelector('[data-equals]')
-const clearButton = document.querySelector('[data-clear]')
+let operator = "";
 
-numberButtons.addEventListener("click", (e) => {
-pendingVal = pendingVal + nbuttons.innerText;
-document.querySelector(".display").innerHTML = pendingVal;
-});
 // Main functions
 const add = (...args) => args.reduce((a, b) => a + b);
 
@@ -39,8 +31,6 @@ const operate = (operator, actualValue) => {
         default: console.log("Blackhole sun, won't you come");
     }
 }
-// Event listener setup for each button
-
 const zero = document.getElementById("0");
 zero.addEventListener("click", (e) => {
     pendingVal = pendingVal + '0';
@@ -93,7 +83,6 @@ nine.addEventListener("click", (e) => {
     pendingVal = pendingVal + '9';
     document.querySelector(".display").innerHTML = pendingVal;
 });
-
 const clear = document.getElementById("clear");
 clear.addEventListener("click", (e) => {
     pendingVal = "";
@@ -109,7 +98,7 @@ decimal.addEventListener("click", (e) => {
 const addSign = document.getElementById("+");
 addSign.addEventListener("click", (e) => {
     let newValue = pendingVal.slice(-2);
-    operator.push('+');
+    operator = '+';
     pendingVal = pendingVal + ' + ';
     actualValue.push(parseInt(newValue));
     document.querySelector(".display").innerHTML = pendingVal;
@@ -118,7 +107,7 @@ addSign.addEventListener("click", (e) => {
 const subtractSign = document.getElementById("-");
 subtractSign.addEventListener("click", (e) => {
     let newValue = pendingVal.slice(-2);
-    operator.push('-');
+    operator = '-';
     pendingVal = pendingVal + ' - ';
     actualValue.push(parseInt(newValue));
     document.querySelector(".display").innerHTML = pendingVal;
@@ -126,7 +115,7 @@ subtractSign.addEventListener("click", (e) => {
 const multiplySign = document.getElementById("*");
 multiplySign.addEventListener("click", (e) => {
     let newValue = pendingVal.slice(-2);
-    operator.push('*');
+    operator = '*';
     pendingVal = pendingVal + ' * ';
     actualValue.push(parseInt(newValue));
     document.querySelector(".display").innerHTML = pendingVal;
@@ -134,7 +123,7 @@ multiplySign.addEventListener("click", (e) => {
 const divideSign = document.getElementById("divide");
 divideSign.addEventListener("click", (e) => {
     let newValue = pendingVal.slice(-2);
-    operator.push('/');
+    operator = '/';
     pendingVal = pendingVal + ' / ';
     actualValue.push(parseInt(newValue));
     document.querySelector(".display").innerHTML = pendingVal;

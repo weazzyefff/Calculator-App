@@ -1,6 +1,6 @@
 .container {
     border-radius: 8px;
-    border: 2px solid black;
+    border: 2px solid blue
     width: 80px;
     display: flex;
     flex-wrap: wrap;

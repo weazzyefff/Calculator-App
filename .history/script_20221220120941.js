@@ -1,16 +1,8 @@
 //Global variables
-let actualValue = [];
-let pendingVal = "";
-const operator = [];
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operations]')
-const equalsButton = document.querySelector('[data-equals]')
-const clearButton = document.querySelector('[data-clear]')
+let displayValue = [];
+let pendingVal [];
+let operator = [];
 
-numberButtons.addEventListener("click", (e) => {
-pendingVal = pendingVal + nbuttons.innerText;
-document.querySelector(".display").innerHTML = pendingVal;
-});
 // Main functions
 const add = (...args) => args.reduce((a, b) => a + b);
 
@@ -20,130 +12,114 @@ const multiply = (...args) => args.reduce((a, b) => a * b);
 
 const divide = (...args) => args.reduce((a, b) => a / b);
 
-const operate = (operator, actualValue) => {
+const operate = (operator, displayValue) => {
 
     switch (operator) {
 
         case '+':
-            return add(...actualValue);
-
+            return add(displayValue);
+          
         case '-':
-            return subtract(...actualValue);
-
+            return subtract(displayValue);
+           
         case '*':
-            return multiply(...actualValue);
-
+            return multiply(displayValue);
+          
         case '/':
-            return divide(...actualValue);
-
+            return divide(displayValue);
+            
         default: console.log("Blackhole sun, won't you come");
     }
 }
-// Event listener setup for each button
 
-const zero = document.getElementById("0");
-zero.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '0';
-    document.querySelector(".display").innerHTML = pendingVal;
-});
 
 const one = document.getElementById("1");
 one.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '1';
+    pendingVal.push('1');
+    pendingVal.join('');
     document.querySelector(".display").innerHTML = pendingVal;
 });
 const two = document.getElementById("2");
 two.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '2';
+    displayValue.push(2);
+    pendingVal = 2;
     document.querySelector(".display").innerHTML = pendingVal;
-
+   
 });
 const three = document.getElementById("3");
 three.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '3';
+    displayValue.push(3);
+    pendingVal = 3;
     document.querySelector(".display").innerHTML = pendingVal;
 });
 const four = document.getElementById("4");
 four.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '4';
+    displayValue.push(4);
+    pendingVal = 4;
     document.querySelector(".display").innerHTML = pendingVal;
 });
 const five = document.getElementById("5");
 five.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '5';
+    pendingVal.push('5');
+    pendingVal.join('');
     document.querySelector(".display").innerHTML = pendingVal;
 });
 const six = document.getElementById("6");
 six.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '6';
+    displayValue.push(6);
+    pendingVal = 6;
     document.querySelector(".display").innerHTML = pendingVal;
 });
 const seven = document.getElementById("7");
 seven.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '7';
+    displayValue.push(4);
+    pendingVal = 4;
     document.querySelector(".display").innerHTML = pendingVal;
 });
 const eight = document.getElementById("8");
 eight.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '8';
+    pendingVal.push(8);
     document.querySelector(".display").innerHTML = pendingVal;
 });
 const nine = document.getElementById("9");
 nine.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '9';
+    displayValue.push(9);
+    pendingVal = 9;
     document.querySelector(".display").innerHTML = pendingVal;
 });
-
 const clear = document.getElementById("clear");
 clear.addEventListener("click", (e) => {
-    pendingVal = "";
-    actualValue = [];
     document.querySelector(".display").innerHTML = 0;
-
-});
-const decimal = document.getElementById(".");
-decimal.addEventListener("click", (e) => {
-    pendingVal = pendingVal + '.';
-    document.querySelector(".display").innerHTML = pendingVal;
+    return displayValue = [];
 });
 const addSign = document.getElementById("+");
 addSign.addEventListener("click", (e) => {
-    let newValue = pendingVal.slice(-2);
     operator.push('+');
-    pendingVal = pendingVal + ' + ';
-    actualValue.push(parseInt(newValue));
-    document.querySelector(".display").innerHTML = pendingVal;
+    displayValue = pendingVal.join('');
+    document.querySelector(".display").innerHTML = displayValue;
+    pendingVal = parseInt(displayValue);
+    displayValue.push(displayValue);
+    console.log(displayValue);
+    
+    
+
 
 });
 const subtractSign = document.getElementById("-");
 subtractSign.addEventListener("click", (e) => {
-    let newValue = pendingVal.slice(-2);
     operator.push('-');
-    pendingVal = pendingVal + ' - ';
-    actualValue.push(parseInt(newValue));
-    document.querySelector(".display").innerHTML = pendingVal;
 });
 const multiplySign = document.getElementById("*");
 multiplySign.addEventListener("click", (e) => {
-    let newValue = pendingVal.slice(-2);
     operator.push('*');
-    pendingVal = pendingVal + ' * ';
-    actualValue.push(parseInt(newValue));
-    document.querySelector(".display").innerHTML = pendingVal;
 });
 const divideSign = document.getElementById("divide");
 divideSign.addEventListener("click", (e) => {
-    let newValue = pendingVal.slice(-2);
     operator.push('/');
-    pendingVal = pendingVal + ' / ';
-    actualValue.push(parseInt(newValue));
-    document.querySelector(".display").innerHTML = pendingVal;
 });
 const equals = document.getElementById("=");
 equals.addEventListener("click", (e) => {
-    let newValue = pendingVal.slice(-2);
-    actualValue.push(parseInt(newValue));
-    return document.querySelector(".display").innerHTML = operate(operator, actualValue);
+  return document.querySelector(".display").innerHTML = operate(operator, displayValue);
 });
 
 

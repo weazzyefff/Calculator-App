@@ -1,16 +1,8 @@
 //Global variables
 let actualValue = [];
 let pendingVal = "";
-const operator = [];
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operations]')
-const equalsButton = document.querySelector('[data-equals]')
-const clearButton = document.querySelector('[data-clear]')
+let operator = [];
 
-numberButtons.addEventListener("click", (e) => {
-pendingVal = pendingVal + nbuttons.innerText;
-document.querySelector(".display").innerHTML = pendingVal;
-});
 // Main functions
 const add = (...args) => args.reduce((a, b) => a + b);
 
@@ -39,9 +31,13 @@ const operate = (operator, actualValue) => {
         default: console.log("Blackhole sun, won't you come");
     }
 }
-// Event listener setup for each button
+const nbuttons = document.querySelectorAll("button.numbtn");
+nbuttons.addEventListener("click", (e) => {
+let pendingVal = pendingVal + element.innerText;
+document.querySelector(".display").innerHTML = pendingVal;
+});
 
-const zero = document.getElementById("0");
+/*const zero = document.getElementById("0");
 zero.addEventListener("click", (e) => {
     pendingVal = pendingVal + '0';
     document.querySelector(".display").innerHTML = pendingVal;
@@ -92,8 +88,7 @@ const nine = document.getElementById("9");
 nine.addEventListener("click", (e) => {
     pendingVal = pendingVal + '9';
     document.querySelector(".display").innerHTML = pendingVal;
-});
-
+});*/
 const clear = document.getElementById("clear");
 clear.addEventListener("click", (e) => {
     pendingVal = "";
